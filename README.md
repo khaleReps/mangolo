@@ -22,6 +22,7 @@ With Mangolo, you can stay organized, boost your productivity, and never miss an
 - **Bootstrap:** Bootstrap is used for responsive design and pre-built UI components to enhance the application's aesthetics.
 - **JavaScript:** The primary programming language used for frontend and backend development.
 - **Git:** Git is used for version control, allowing easy collaboration and tracking of changes throughout the development process.
+- **React-Quill:**  A rich text editor component for React applications, used for creating and editing notes with formatted text.
 - **Docker:** Docker is used to containerize the project for easy deployment and reproducibility.
 
 ## Getting Started
