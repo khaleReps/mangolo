@@ -14,6 +14,15 @@ With Mangolo, you can stay organized, boost your productivity, and never miss an
 
 ## Technologies Used
 
+- **MongoDB:** A NoSQL database used to store and retrieve note data.
+- **Express.js:** A backend framework for building RESTful APIs and handling server-side logic.
+- **React:** A JavaScript library for building user interfaces and managing the frontend of the application.
+- **Node.js:** A JavaScript runtime environment that executes server-side code and powers the backend of the application.
+- **HTML/CSS:** The project uses HTML for markup and CSS for styling and layout.
+- **Bootstrap:** Bootstrap is used for responsive design and pre-built UI components to enhance the application's aesthetics.
+- **JavaScript:** The primary programming language used for frontend and backend development.
+- **Git:** Git is used for version control, allowing easy collaboration and tracking of changes throughout the development process.
+- **Docker:** Docker is used to containerize the project for easy deployment and reproducibility.
 
 ## Getting Started
 
