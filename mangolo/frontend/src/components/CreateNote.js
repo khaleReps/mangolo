@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const CreateNote = (props) => {
   const [title, setTitle] = useState('');
@@ -9,12 +11,12 @@ const CreateNote = (props) => {
     setTitle(e.target.value);
   };
 
-  const handleContentChange = (e) => {
-    setContent(e.target.value);
+  const handleContentChange = (value) => {
+    setContent(value);
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault('Submit button clicked');
+    e.preventDefault();
     const newNote = {
       title,
       content,
@@ -43,13 +45,11 @@ const CreateNote = (props) => {
         </div>
         <div className="form-group">
           <label>Content: </label>
-          <textarea
-            required
-            className="form-control"
-            rows="5"
+          <ReactQuill
             value={content}
             onChange={handleContentChange}
-          ></textarea>
+            className="quill-editor"
+          />
         </div>
         <div className="form-group">
           <input

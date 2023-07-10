@@ -1,31 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const EditNote = (props) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
   useEffect(() => {
-    const fetchNote = async () => {
-      try {
-        const response = await axios.get(`/notes/${props.match.params.id}`);
-        setTitle(response.data.title);
-        setContent(response.data.content);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    fetchNote();
+  }, []);
 
-    fetchNote(); // Add fetchNote function directly in the useEffect
-
-  }, [props.match.params.id]); // Add props.match.params.id as a dependency
+  const fetchNote = async () => {
+    try {
+      const response = await axios.get(`/notes/${props.match.params.id}`);
+      setTitle(response.data.title);
+      setContent(response.data.content);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
 
-  const handleContentChange = (e) => {
-    setContent(e.target.value);
+  const handleContentChange = (value) => {
+    setContent(value);
   };
 
   const handleSubmit = async (e) => {
@@ -58,13 +59,11 @@ const EditNote = (props) => {
         </div>
         <div className="form-group">
           <label>Content: </label>
-          <textarea
-            required
-            className="form-control"
-            rows="5"
+          <ReactQuill
             value={content}
             onChange={handleContentChange}
-          ></textarea>
+            className="quill-editor"
+          />
         </div>
         <div className="form-group">
           <input
