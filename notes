@@ -1,0 +1,25 @@
+//install react-quill
+
+
+
+// App.js
+import React, { useState } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+
+function App() {
+  const [content, setContent] = useState('');
+
+  const handleChange = (value) => {
+    setContent(value);
+  };
+
+  return (
+    <div>
+      <h1>Quill Editor Example</h1>
+      <ReactQuill value={content} onChange={handleChange} />
+    </div>
+  );
+}
+
+export default App;
